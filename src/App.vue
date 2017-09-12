@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-    <Mheader></Mheader>
+    <Header></Header>
     <tab></tab>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Mheader from 'components/header/m-header'
+import Header from 'components/header/header'
 import Tab from 'components/tab/tab'
 
 export default {
   name: 'app',
   components: {
-    Mheader,
+    Header,
     Tab
   }
 }
@@ -24,5 +24,4 @@ export default {
 
 #app 
   color: $color-theme
-
 </style>
