@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Mheader from './components/header/m-header'
-import Tab from './components/tab/tab'
+import Mheader from 'components/header/m-header'
+import Tab from 'components/tab/tab'
 
 export default {
   name: 'app',
