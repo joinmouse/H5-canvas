@@ -1,14 +1,14 @@
-//jsonp封装
+// jsonp的封装
 import originJSONP from 'jsonp'
 
-export default function jsonp(url,data,option) {
-  url += (url.indexOf('?')<0 ? '?' : '&') + param(data)
+export default function jsonp(url, data, option) {
+  url += (url.indexOf('?') < 0 ? '?' : '&') + param(data)
 
-  return new Promise((resolve,reject) => {
-    originJSONP(url,option,(err,data) => {
-      if(!err){
+  return new Promise((resolve, reject) => {
+    originJSONP(url, option, (err, data) => {
+      if (!err) {
         resolve(data)
-      }else {
+      } else {
         reject(err)
       }
     })
@@ -17,8 +17,8 @@ export default function jsonp(url,data,option) {
 
 function param(data) {
   let url = ''
-  for(var k in data){
-    let value = data[k]!== undefined ? data[k] : ''
+  for (let k in data) {
+    let value = data[k] !== undefined ? data[k] : ''
     url += `&${k}=${encodeURIComponent(value)}`
   }
   return url ? url.substring(1) : ''
